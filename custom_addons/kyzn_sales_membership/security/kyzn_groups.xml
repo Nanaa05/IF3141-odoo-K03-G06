@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="module_category_kyzn_sales" model="ir.module.category">
+            <field name="name">KYZN Sales</field>
+            <field name="description">Kategori hak akses pengguna untuk Sistem Pencatatan Sales KYZN</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <!-- GRUP 1: SALES EXECUTIVE - hanya dapat akses sales order milik sendiri -->
+        <record id="group_kyzn_sales_executive" model="res.groups">
+            <field name="name">Sales Executive</field>
+            <field name="category_id" ref="module_category_kyzn_sales"/>
+        </record>
+
+        <!-- GRUP 2: SALES ADMIN - dapat mengakses semua sales order, dapat mengubah status validasi, 
+        tidak bisa mengakses laporan keuangan -->
+        <record id="group_kyzn_sales_admin" model="res.groups">
+            <field name="name">Sales Admin</field>
+            <field name="category_id" ref="module_category_kyzn_sales"/>
+            <field name="implied_ids" eval="[(4, ref('group_kyzn_sales_executive'))]"/>
+        </record>
+
+        <!-- GRUP 3: HEAD OF SALES - memiliki akses penuh ke dashboard performa dan laporan, 
+        bisa melihat semua data sales order, bisa mengatur target dan konfigurasi pake membership -->
+        <record id="group_kyzn_sales_head" model="res.groups">
+            <field name="name">Head of Sales</field>
+            <field name="category_id" ref="module_category_kyzn_sales"/>
+            <field name="implied_ids" eval="[(4, ref('group_kyzn_sales_admin'))]"/>
+        </record>
+
+        <!-- GRUP 4: FINANCE / AR STAFF - hanya bisa melihat laporan rekap penjualan (read-only), 
+        tidak bisa membuat atau mengubah sales order -->
+        <record id="group_kyzn_finance_ar" model="res.groups">
+            <field name="name">Finance / AR Staff</field>
+            <field name="category_id" ref="module_category_kyzn_sales"/>
+        </record>
+
+        <!-- GRUP 5: IT SUPPORT / Admin Odoo memiliki akses penuh untuk konfigurasi sistem, dapat
+        mengelola pengguna dan hak akses mereka, serta dapat mengelola data master -->
+        <record id="group_kyzn_it_support" model="res.groups">
+            <field name="name">IT Support / Admin Odoo</field>
+            <field name="category_id" ref="module_category_kyzn_sales"/>
+            <field name="implied_ids" eval="[
+                (4, ref('group_kyzn_sales_head')),
+                (4, ref('group_kyzn_finance_ar'))
+            ]"/>
+        </record>
+
+    </data>
+</odoo>
