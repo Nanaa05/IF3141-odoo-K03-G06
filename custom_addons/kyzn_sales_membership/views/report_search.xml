@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_report_search" model="ir.ui.view">
+        <field name="name">sale.order.report.search</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <search string="Search Reports">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+                
+                <filter string="Membership Aktif" name="active_membership" domain="[('is_active', '=', True)]"/>
+                <filter string="Perlu Validasi" name="to_validate" domain="[('status_validasi', '=', 'to_validate')]"/>
+                <filter string="Perlu Follow-up" name="pending_followup" domain="[('follow_up_status', '=', 'pending')]"/>
+                
+                <separator/>
+                <group expand="1" string="Group By">
+                    <filter string="Sales Executive" name="group_by_sales" context="{'group_by':'user_id'}"/>
+                    <filter string="Jenis Transaksi" name="group_by_type" context="{'group_by':'jenis_transaksi'}"/>
+                    <filter string="Status Validasi" name="group_by_status" context="{'group_by':'status_validasi'}"/>
+                    <filter string="Bulan Transaksi" name="group_by_month" context="{'group_by':'date_order:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

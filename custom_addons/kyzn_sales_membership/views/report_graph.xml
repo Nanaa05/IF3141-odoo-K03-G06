@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_report_graph" model="ir.ui.view">
+        <field name="name">sale.order.report.graph</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <graph string="Grafik Performa Penjualan" type="bar" sample="1">
+                <field name="user_id"/>
+                <field name="nilai_pembayaran" type="measure"/>
+            </graph>
+        </field>
+    </record>
+</odoo>

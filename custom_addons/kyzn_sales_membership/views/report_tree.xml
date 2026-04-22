@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_report_tree" model="ir.ui.view">
+        <field name="name">sale.order.report.tree</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <tree string="Rekap Penjualan" create="false" edit="false" decoration-info="status_validasi == 'to_validate'" decoration-success="status_validasi == 'validated'">
+                <field name="name" string="Nomor Order"/>
+                <field name="date_order" widget="date"/>
+                <field name="partner_id" string="Member"/>
+                <field name="user_id" string="Sales Executive" widget="many2one_avatar_user"/>
+                <field name="jenis_transaksi" widget="badge" decoration-info="jenis_transaksi == 'baru'" decoration-warning="jenis_transaksi == 'renewal'"/>
+                <field name="nilai_pembayaran" sum="Total Penjualan" widget="monetary"/>
+                <field name="status_validasi" widget="badge" decoration-success="status_validasi == 'validated'" decoration-info="status_validasi == 'to_validate'"/>
+                <field name="is_active" string="Status Membership" widget="boolean_toggle"/>
+                <field name="follow_up_status" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

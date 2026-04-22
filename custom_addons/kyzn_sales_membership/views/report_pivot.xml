@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_report_pivot" model="ir.ui.view">
+        <field name="name">sale.order.report.pivot</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <pivot string="Analisis Penjualan" sample="1">
+                <field name="user_id" type="row"/>
+                <field name="date_order" interval="month" type="col"/>
+                <field name="nilai_pembayaran" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>
