@@ -324,12 +324,10 @@ class ValidationRecord(models.Model):
         string='Status Validasi',
         required=True,
         default='open',
-        tracking=True,
 )
 
     catatan_koreksi = fields.Text(
         string='Catatan Koreksi',
-        tracking=True,
     )
     
     @api.constrains('status_validasi', 'catatan_koreksi')

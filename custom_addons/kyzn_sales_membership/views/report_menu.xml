@@ -14,7 +14,7 @@
 
     <menuitem id="menu_kyzn_reporting_root"
               name="Reporting"
-              parent="menu_kyzn_sales_root"
+              parent="sale.sale_menu_root"
               sequence="50"
               groups="group_kyzn_sales_head,group_kyzn_finance_ar"/>
 
