@@ -63,6 +63,13 @@ class Member(models.Model):
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
+    cabang_tugas = fields.Char(
+        string='Cabang',
+        related='user_id.cabang_tugas',
+        store=True,
+        readonly=True,
+    )
+
     jenis_transaksi = fields.Selection(
         [
             ('baru', 'New Member'),
@@ -105,8 +112,9 @@ class SaleOrder(models.Model):
     membership_type_id = fields.Many2one(
         'product.template',
         string='Membership Type',
+        domain="[('detailed_type', '=', 'service'), ('sale_ok', '=', True)]",
         tracking=True,
-    )    
+    )
 
     tanggal_mulai = fields.Date(
         string='Tanggal Mulai Membership',
@@ -351,3 +359,6 @@ class ValidationRecord(models.Model):
                 raise ValidationError(
                     'Catatan koreksi wajib diisi ketika status validasi adalah Open.'
                 )
+
+
+

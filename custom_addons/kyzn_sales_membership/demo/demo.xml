@@ -1,5 +1,332 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<data>
-	</data>
+    <data noupdate="0">
+
+        <!-- USERS -->
+        <record id="user_sales_exec_kng" model="res.users">
+            <field name="name">Sales Executive Kuningan</field>
+            <field name="login">sales.kuningan@kyzn.demo</field>
+            <field name="email">sales.kuningan@kyzn.demo</field>
+            <field name="password">demo</field>
+            <field name="cabang_tugas">Kuningan</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('kyzn_sales_membership.group_kyzn_sales_executive')])]"/>
+        </record>
+
+        <record id="user_sales_exec_bsd" model="res.users">
+            <field name="name">Sales Executive BSD</field>
+            <field name="login">sales.bsd@kyzn.demo</field>
+            <field name="email">sales.bsd@kyzn.demo</field>
+            <field name="password">demo</field>
+            <field name="cabang_tugas">BSD</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('kyzn_sales_membership.group_kyzn_sales_executive')])]"/>
+        </record>
+
+        <record id="user_sales_exec_pusat" model="res.users">
+            <field name="name">Sales Executive Pusat</field>
+            <field name="login">sales.pusat@kyzn.demo</field>
+            <field name="email">sales.pusat@kyzn.demo</field>
+            <field name="password">demo</field>
+            <field name="cabang_tugas">Pusat</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('kyzn_sales_membership.group_kyzn_sales_executive')])]"/>
+        </record>
+
+        <record id="user_sales_admin" model="res.users">
+            <field name="name">Sales Admin KYZN</field>
+            <field name="login">sales.admin@kyzn.demo</field>
+            <field name="email">sales.admin@kyzn.demo</field>
+            <field name="password">demo</field>
+            <field name="cabang_tugas">Pusat</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('kyzn_sales_membership.group_kyzn_sales_admin')])]"/>
+        </record>
+
+        <record id="user_head_sales" model="res.users">
+            <field name="name">Head of Sales KYZN</field>
+            <field name="login">head.sales@kyzn.demo</field>
+            <field name="email">head.sales@kyzn.demo</field>
+            <field name="password">demo</field>
+            <field name="cabang_tugas">Pusat</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('kyzn_sales_membership.group_kyzn_sales_head')])]"/>
+        </record>
+
+        <record id="user_finance" model="res.users">
+            <field name="name">Finance AR KYZN</field>
+            <field name="login">finance.ar@kyzn.demo</field>
+            <field name="email">finance.ar@kyzn.demo</field>
+            <field name="password">demo</field>
+            <field name="cabang_tugas">Pusat</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('kyzn_sales_membership.group_kyzn_finance_ar')])]"/>
+        </record>
+
+        <record id="user_it_support" model="res.users">
+            <field name="name">IT Support KYZN</field>
+            <field name="login">it.support@kyzn.demo</field>
+            <field name="email">it.support@kyzn.demo</field>
+            <field name="password">demo</field>
+            <field name="cabang_tugas">Pusat</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('kyzn_sales_membership.group_kyzn_it_support')])]"/>
+        </record>
+
+        <!-- MEMBERS -->
+        <record id="partner_member_andi" model="res.partner">
+            <field name="name">Andi Saputra</field>
+            <field name="email">andi.saputra@example.com</field>
+            <field name="phone">081234567001</field>
+            <field name="join_date">2026-01-10</field>
+            <field name="birthdate">2001-03-15</field>
+            <field name="emergency_contact">Budi Saputra - 081234560001</field>
+        </record>
+
+        <record id="partner_member_bunga" model="res.partner">
+            <field name="name">Bunga Lestari</field>
+            <field name="email">bunga.lestari@example.com</field>
+            <field name="phone">081234567002</field>
+            <field name="join_date">2026-02-01</field>
+            <field name="birthdate">1999-09-21</field>
+            <field name="emergency_contact">Citra Lestari - 081234560002</field>
+        </record>
+
+        <record id="partner_member_chandra" model="res.partner">
+            <field name="name">Chandra Wijaya</field>
+            <field name="email">chandra.wijaya@example.com</field>
+            <field name="phone">081234567003</field>
+            <field name="birthdate">2003-06-11</field>
+            <field name="emergency_contact">Dewi Wijaya - 081234560003</field>
+        </record>
+
+        <record id="partner_member_dewi" model="res.partner">
+            <field name="name">Dewi Kartika</field>
+            <field name="email">dewi.kartika@example.com</field>
+            <field name="phone">081234567004</field>
+            <field name="join_date">2026-03-03</field>
+            <field name="birthdate">2000-11-08</field>
+            <field name="emergency_contact">Agus Kartika - 081234560004</field>
+        </record>
+
+        <record id="partner_member_eko" model="res.partner">
+            <field name="name">Eko Pratama</field>
+            <field name="email">eko.pratama@example.com</field>
+            <field name="phone">081234567005</field>
+            <field name="birthdate">1998-04-27</field>
+            <field name="emergency_contact">Sari Pratama - 081234560005</field>
+        </record>
+
+        <record id="partner_member_farah" model="res.partner">
+            <field name="name">Farah Nabila</field>
+            <field name="email">farah.nabila@example.com</field>
+            <field name="phone">081234567006</field>
+            <field name="join_date">2026-03-20</field>
+            <field name="birthdate">2002-12-05</field>
+            <field name="emergency_contact">Nina Nabila - 081234560006</field>
+        </record>
+
+        <record id="partner_member_gilang" model="res.partner">
+            <field name="name">Gilang Mahendra</field>
+            <field name="email">gilang.mahendra@example.com</field>
+            <field name="phone">081234567007</field>
+            <field name="birthdate">1997-08-19</field>
+            <field name="emergency_contact">Rudi Mahendra - 081234560007</field>
+        </record>
+
+        <record id="partner_member_hana" model="res.partner">
+            <field name="name">Hana Permata</field>
+            <field name="email">hana.permata@example.com</field>
+            <field name="phone">081234567008</field>
+            <field name="birthdate">2004-01-30</field>
+            <field name="emergency_contact">Maya Permata - 081234560008</field>
+        </record>
+
+        <!-- MEMBERSHIP PACKAGES -->
+        <record id="product_membership_adult_month" model="product.template">
+            <field name="name">Membership Adult - Bulanan</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">1</field>
+            <field name="list_price">750000</field>
+            <field name="membership_duration_days">30</field>
+            <field name="description_sale">Paket membership kelas adult selama 30 hari. Harga Rp750.000.</field>
+        </record>
+
+        <record id="product_membership_academy_month" model="product.template">
+            <field name="name">Membership Academy - Bulanan</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">1</field>
+            <field name="list_price">950000</field>
+            <field name="membership_duration_days">30</field>
+            <field name="description_sale">Paket membership academy selama 30 hari. Harga Rp950.000.</field>
+        </record>
+
+        <record id="product_membership_adult_quarter" model="product.template">
+            <field name="name">Membership Adult - 3 Bulan</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">1</field>
+            <field name="list_price">2000000</field>
+            <field name="membership_duration_days">90</field>
+            <field name="description_sale">Paket membership kelas adult selama 90 hari. Harga Rp2.000.000.</field>
+        </record>
+
+        <record id="product_membership_academy_quarter" model="product.template">
+            <field name="name">Membership Academy - 3 Bulan</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">1</field>
+            <field name="list_price">2600000</field>
+            <field name="membership_duration_days">90</field>
+            <field name="description_sale">Paket membership academy selama 90 hari. Harga Rp2.600.000.</field>
+        </record>
+
+        <record id="product_membership_adult_year" model="product.template">
+            <field name="name">Membership Adult - Tahunan</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">1</field>
+            <field name="list_price">7200000</field>
+            <field name="membership_duration_days">365</field>
+            <field name="description_sale">Paket membership kelas adult selama 1 tahun. Harga Rp7.200.000.</field>
+        </record>
+
+        <!-- SALES ORDERS -->
+        <record id="so_kyzn_001" model="sale.order">
+            <field name="name">SO-KYZN-001</field>
+            <field name="partner_id" ref="partner_member_andi"/>
+            <field name="user_id" ref="user_sales_exec_kng"/>
+            <field name="membership_type_id" ref="product_membership_adult_month"/>
+            <field name="jenis_transaksi">baru</field>
+            <field name="metode_pembayaran">qris</field>
+            <field name="tanggal_pembayaran">2026-04-01</field>
+            <field name="tanggal_mulai">2026-04-01</field>
+            <field name="nilai_pembayaran">750000</field>
+            <field name="follow_up_status">pending</field>
+        </record>
+
+        <record id="validation_so_kyzn_001" model="sale.order.validation">
+            <field name="sale_order_id" ref="so_kyzn_001"/>
+            <field name="sales_admin_id" ref="user_sales_admin"/>
+            <field name="status_validasi">confirmed</field>
+            <field name="catatan_koreksi">Data transaksi lengkap dan pembayaran sudah sesuai.</field>
+        </record>
+
+        <record id="so_kyzn_002" model="sale.order">
+            <field name="name">SO-KYZN-002</field>
+            <field name="partner_id" ref="partner_member_bunga"/>
+            <field name="user_id" ref="user_sales_exec_bsd"/>
+            <field name="membership_type_id" ref="product_membership_academy_month"/>
+            <field name="jenis_transaksi">baru</field>
+            <field name="metode_pembayaran">transfer</field>
+            <field name="tanggal_pembayaran">2026-04-05</field>
+            <field name="tanggal_mulai">2026-04-05</field>
+            <field name="nilai_pembayaran">950000</field>
+            <field name="follow_up_status">pending</field>
+        </record>
+
+        <record id="validation_so_kyzn_002" model="sale.order.validation">
+            <field name="sale_order_id" ref="so_kyzn_002"/>
+            <field name="sales_admin_id" ref="user_sales_admin"/>
+            <field name="status_validasi">open</field>
+            <field name="catatan_koreksi">Bukti pembayaran belum lengkap. Mohon unggah bukti transfer yang jelas.</field>
+        </record>
+
+        <record id="so_kyzn_003" model="sale.order">
+            <field name="name">SO-KYZN-003</field>
+            <field name="partner_id" ref="partner_member_chandra"/>
+            <field name="user_id" ref="user_sales_exec_kng"/>
+            <field name="membership_type_id" ref="product_membership_adult_quarter"/>
+            <field name="jenis_transaksi">renewal</field>
+            <field name="metode_pembayaran">cash</field>
+            <field name="tanggal_pembayaran">2026-04-10</field>
+            <field name="tanggal_mulai">2026-04-10</field>
+            <field name="nilai_pembayaran">2000000</field>
+            <field name="follow_up_status">follow_up_1_done</field>
+        </record>
+
+        <record id="so_kyzn_004" model="sale.order">
+            <field name="name">SO-KYZN-004</field>
+            <field name="partner_id" ref="partner_member_dewi"/>
+            <field name="user_id" ref="user_sales_exec_pusat"/>
+            <field name="membership_type_id" ref="product_membership_academy_quarter"/>
+            <field name="jenis_transaksi">baru</field>
+            <field name="metode_pembayaran">cc</field>
+            <field name="tanggal_pembayaran">2026-04-12</field>
+            <field name="tanggal_mulai">2026-04-12</field>
+            <field name="nilai_pembayaran">2600000</field>
+            <field name="follow_up_status">follow_up_2_done</field>
+        </record>
+
+        <record id="validation_so_kyzn_004" model="sale.order.validation">
+            <field name="sale_order_id" ref="so_kyzn_004"/>
+            <field name="sales_admin_id" ref="user_sales_admin"/>
+            <field name="status_validasi">confirmed</field>
+            <field name="catatan_koreksi">Transaksi kartu kredit sudah terkonfirmasi.</field>
+        </record>
+
+        <record id="so_kyzn_005" model="sale.order">
+            <field name="name">SO-KYZN-005</field>
+            <field name="partner_id" ref="partner_member_eko"/>
+            <field name="user_id" ref="user_sales_exec_bsd"/>
+            <field name="membership_type_id" ref="product_membership_adult_year"/>
+            <field name="jenis_transaksi">baru</field>
+            <field name="metode_pembayaran">transfer</field>
+            <field name="tanggal_pembayaran">2026-04-14</field>
+            <field name="tanggal_mulai">2026-04-14</field>
+            <field name="nilai_pembayaran">7200000</field>
+            <field name="follow_up_status">pending</field>
+        </record>
+
+        <record id="validation_so_kyzn_005" model="sale.order.validation">
+            <field name="sale_order_id" ref="so_kyzn_005"/>
+            <field name="sales_admin_id" ref="user_sales_admin"/>
+            <field name="status_validasi">open</field>
+            <field name="catatan_koreksi">Nominal pembayaran belum sesuai dengan harga paket tahunan.</field>
+        </record>
+
+        <record id="so_kyzn_006" model="sale.order">
+            <field name="name">SO-KYZN-006</field>
+            <field name="partner_id" ref="partner_member_farah"/>
+            <field name="user_id" ref="user_sales_exec_kng"/>
+            <field name="membership_type_id" ref="product_membership_academy_month"/>
+            <field name="jenis_transaksi">baru</field>
+            <field name="metode_pembayaran">qris</field>
+            <field name="tanggal_pembayaran">2026-04-16</field>
+            <field name="tanggal_mulai">2026-04-16</field>
+            <field name="nilai_pembayaran">950000</field>
+            <field name="follow_up_status">done</field>
+        </record>
+
+        <record id="validation_so_kyzn_006" model="sale.order.validation">
+            <field name="sale_order_id" ref="so_kyzn_006"/>
+            <field name="sales_admin_id" ref="user_sales_admin"/>
+            <field name="status_validasi">confirmed</field>
+            <field name="catatan_koreksi">Pembayaran QRIS sudah valid.</field>
+        </record>
+
+        <record id="so_kyzn_007" model="sale.order">
+            <field name="name">SO-KYZN-007</field>
+            <field name="partner_id" ref="partner_member_gilang"/>
+            <field name="user_id" ref="user_sales_exec_pusat"/>
+            <field name="membership_type_id" ref="product_membership_adult_month"/>
+            <field name="jenis_transaksi">renewal</field>
+            <field name="metode_pembayaran">cash</field>
+            <field name="tanggal_pembayaran">2026-04-18</field>
+            <field name="tanggal_mulai">2026-04-18</field>
+            <field name="nilai_pembayaran">750000</field>
+            <field name="follow_up_status">follow_up_3_done</field>
+        </record>
+
+        <record id="validation_so_kyzn_007" model="sale.order.validation">
+            <field name="sale_order_id" ref="so_kyzn_007"/>
+            <field name="sales_admin_id" ref="user_sales_admin"/>
+            <field name="status_validasi">resolved</field>
+            <field name="catatan_koreksi">Data sudah direvisi oleh sales dan menunggu validasi ulang.</field>
+        </record>
+
+        <record id="so_kyzn_008" model="sale.order">
+            <field name="name">SO-KYZN-008</field>
+            <field name="partner_id" ref="partner_member_hana"/>
+            <field name="user_id" ref="user_sales_exec_bsd"/>
+            <field name="membership_type_id" ref="product_membership_academy_quarter"/>
+            <field name="jenis_transaksi">baru</field>
+            <field name="metode_pembayaran">qris</field>
+            <field name="tanggal_pembayaran">2026-04-20</field>
+            <field name="tanggal_mulai">2026-04-20</field>
+            <field name="nilai_pembayaran">2600000</field>
+            <field name="follow_up_status">pending</field>
+        </record>
+
+    </data>
 </odoo>

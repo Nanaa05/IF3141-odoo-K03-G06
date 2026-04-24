@@ -38,16 +38,16 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Riwayat Validasi" name="page_validation">
                     <field name="validation_ids" readonly="1">
-                        <list string="Riwayat Validasi" default_order="create_date desc">
-                            <field name="create_date" string="Tanggal"/>
-                            <field name="sales_admin_id"/>
-                            <field name="status_validasi"
-                                   decoration-danger="status_validasi == 'open'"
-                                   decoration-warning="status_validasi == 'resolved'"
-                                   decoration-success="status_validasi == 'confirmed'"/>
-                            <field name="catatan_koreksi"/>
-                        </list>
-                    </field>
+                      <tree string="Riwayat Validasi" default_order="create_date desc">
+                          <field name="create_date" string="Tanggal"/>
+                          <field name="sales_admin_id"/>
+                          <field name="status_validasi"
+                                 decoration-danger="status_validasi == 'open'"
+                                 decoration-warning="status_validasi == 'resolved'"
+                                 decoration-success="status_validasi == 'confirmed'"/>
+                          <field name="catatan_koreksi"/>
+                      </tree>
+                  </field>
                 </page>
             </xpath>
 

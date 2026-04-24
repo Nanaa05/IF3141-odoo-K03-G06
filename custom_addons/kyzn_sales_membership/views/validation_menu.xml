@@ -3,15 +3,18 @@
     <record id="action_sale_order_validation" model="ir.actions.act_window">
         <field name="name">Riwayat Validasi</field>
         <field name="res_model">sale.order.validation</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="view_sale_order_validation_search"/>
     </record>
 
-    <menuitem
-        id="menu_sale_order_validation"
-        name="Riwayat Validasi"
-        parent="sale.sale_menu_root"
-        action="action_sale_order_validation"
-        sequence="20"
-        groups="kyzn_sales_membership.group_kyzn_sales_admin"/>
+    <menuitem id="menu_kyzn_validation_root"
+              name="Validation"
+              parent="menu_kyzn_sales_root"
+              sequence="20"/>
+
+    <menuitem id="menu_sale_order_validation"
+              name="Riwayat Validasi"
+              parent="menu_kyzn_validation_root"
+              action="action_sale_order_validation"
+              sequence="10"/>
 </odoo>

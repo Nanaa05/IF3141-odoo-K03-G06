@@ -5,6 +5,7 @@
         <field name="model">sale.order</field>
         <field name="arch" type="xml">
             <pivot string="Analisis Penjualan" sample="1">
+                <field name="cabang_tugas" type="row"/>
                 <field name="user_id" type="row"/>
                 <field name="date_order" interval="month" type="col"/>
                 <field name="nilai_pembayaran" type="measure"/>

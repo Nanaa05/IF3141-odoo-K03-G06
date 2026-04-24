@@ -6,18 +6,28 @@
     'author': "Kelompok 06-K03",
     'category': 'Sales',
     'version': '1.0',
-    'depends': ['base', 'sale', 'account'],
+    'depends': ['base', 'sale'],
     'data': [
         'security/kyzn_groups.xml',
         'security/ir.model.access.csv',
         'security/kyzn_record_rules.xml',
-        'demo/demo.xml',
+
+        'views/menu_root.xml',
+
+        'views/res_users_views.xml',
+        'views/res_partner_views.xml',
+        'views/membership_product_views.xml',
+
+        'views/sales_order_tree.xml',
+        'views/sales_order_search.xml',
+        'views/sales_order_form.xml',
+        'views/sale_order_form.xml',
+        'views/sales_order_menu.xml',
 
         'views/validation_tree.xml',
         'views/validation_form.xml',
         'views/validation_search.xml',
         'views/validation_menu.xml',
-        'views/sale_order_form.xml',
 
         'views/report_graph.xml',
         'views/report_pivot.xml',
@@ -25,10 +35,7 @@
         'views/report_tree.xml',
         'views/report_menu.xml',
 
-        'views/sale_order_form.xml',
-        'views/sale_order_tree.xml',
-        'views/sale_order_search.xml',
-        'views/sale_order_menu.xml',
+        'demo/demo.xml',
     ],
     'installable': True,
     'application': True,

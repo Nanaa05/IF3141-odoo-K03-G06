@@ -26,12 +26,6 @@ access_res_partner_finance,res.partner.finance,base.model_res_partner,kyzn_sales
 access_res_partner_it,res.partner.it,base.model_res_partner,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
 access_res_users_head,res.users.head,base.model_res_users,kyzn_sales_membership.group_kyzn_sales_head,1,0,0,0
 access_res_users_it,res.users.it,base.model_res_users,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
-access_account_move_finance,account.move.finance,account.model_account_move,kyzn_sales_membership.group_kyzn_finance_ar,1,0,0,0
-access_account_move_head,account.move.head,account.model_account_move,kyzn_sales_membership.group_kyzn_sales_head,1,0,0,0
-access_account_move_it,account.move.it,account.model_account_move,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
-access_account_move_line_finance,account.move.line.finance,account.model_account_move_line,kyzn_sales_membership.group_kyzn_finance_ar,1,0,0,0
-access_account_move_line_head,account.move.line.head,account.model_account_move_line,kyzn_sales_membership.group_kyzn_sales_head,1,0,0,0
-access_account_move_line_it,account.move.line.it,account.model_account_move_line,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
 access_res_groups_it,res.groups.it,base.model_res_groups,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
 access_ir_model_access_it,ir.model.access.it,base.model_ir_model_access,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
 access_ir_rule_it,ir.rule.it,base.model_ir_rule,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
@@ -40,6 +34,6 @@ access_sale_order_validation_admin,sale.order.validation.admin,kyzn_sales_member
 access_sale_order_validation_head,sale.order.validation.head,kyzn_sales_membership.model_sale_order_validation,kyzn_sales_membership.group_kyzn_sales_head,1,1,1,1
 access_sale_order_validation_finance,sale.order.validation.finance,kyzn_sales_membership.model_sale_order_validation,kyzn_sales_membership.group_kyzn_finance_ar,1,0,0,0
 access_sale_order_validation_it,sale.order.validation.it,kyzn_sales_membership.model_sale_order_validation,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
-access_wizard_need_revision_exec,kyzn.wizard.need.revision.exec,kyzn_sales_membership.model_kyzn_wizard_need_revision,kyzn_sales_membership.group_kyzn_sales_executive,1,1,1,1
-access_wizard_need_revision_admin,kyzn.wizard.need.revision.admin,kyzn_sales_membership.model_kyzn_wizard_need_revision,kyzn_sales_membership.group_kyzn_sales_admin,1,1,1,1
-access_wizard_need_revision_it,kyzn.wizard.need.revision.it,kyzn_sales_membership.model_kyzn_wizard_need_revision,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
+access_wizard_need_revision_exec,kyzn.wizard.need.revision.exec,model_kyzn_wizard_need_revision,kyzn_sales_membership.group_kyzn_sales_executive,1,1,1,1
+access_wizard_need_revision_admin,kyzn.wizard.need.revision.admin,model_kyzn_wizard_need_revision,kyzn_sales_membership.group_kyzn_sales_admin,1,1,1,1
+access_wizard_need_revision_it,kyzn.wizard.need.revision.it,model_kyzn_wizard_need_revision,kyzn_sales_membership.group_kyzn_it_support,1,1,1,1
