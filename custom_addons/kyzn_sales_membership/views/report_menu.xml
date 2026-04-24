@@ -12,11 +12,14 @@
         </field>
     </record>
 
+    <menuitem id="menu_kyzn_sales_root"
+              name="KYZN Sales"
+              sequence="1"/>
+
     <menuitem id="menu_kyzn_reporting_root"
               name="Reporting"
-              parent="sale.sale_menu_root"
-              sequence="50"
-              groups="group_kyzn_sales_head,group_kyzn_finance_ar"/>
+              parent="menu_kyzn_sales_root"
+              sequence="10"/>
 
     <menuitem id="menu_kyzn_dashboard"
               name="Dashboard &amp; Analisis"
