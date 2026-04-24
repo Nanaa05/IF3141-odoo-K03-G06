@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_kyzn_member" model="ir.ui.view">
+        <field name="name">res.partner.form.kyzn.member</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="join_date"/>
+                <field name="birthdate"/>
+                <field name="age" readonly="1"/>
+                <field name="emergency_contact"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

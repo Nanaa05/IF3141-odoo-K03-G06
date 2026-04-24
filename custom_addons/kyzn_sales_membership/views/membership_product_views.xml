@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_kyzn_membership_product_tree" model="ir.ui.view">
+        <field name="name">product.template.kyzn.membership.tree</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <tree string="Paket Membership">
+                <field name="name" string="Nama Paket"/>
+                <field name="detailed_type" string="Tipe Produk"/>
+                <field name="list_price" string="Harga"/>
+                <field name="membership_duration_days" string="Durasi Hari"/>
+                <field name="sale_ok"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_kyzn_membership_product_form" model="ir.ui.view">
+        <field name="name">product.template.kyzn.membership.form</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <form string="Paket Membership">
+                <sheet>
+                    <group>
+                        <group string="Informasi Paket">
+                            <field name="name"/>
+                            <field name="detailed_type"/>
+                            <field name="sale_ok"/>
+                        </group>
+                        <group string="Harga dan Durasi">
+                            <field name="list_price"/>
+                            <field name="membership_duration_days"/>
+                        </group>
+                    </group>
+                    <group string="Fasilitas / Catatan">
+                        <field name="description_sale" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_kyzn_membership_product" model="ir.actions.act_window">
+        <field name="name">Paket Membership</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('detailed_type', '=', 'service')]</field>
+        <field name="context">{'default_detailed_type': 'service', 'default_sale_ok': True}</field>
+    </record>
+
+    <menuitem id="menu_kyzn_membership_product"
+              name="Paket Membership"
+              parent="menu_kyzn_sales_root"
+              action="action_kyzn_membership_product"
+              sequence="30"/>
+</odoo>
